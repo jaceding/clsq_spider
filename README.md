@@ -12,14 +12,14 @@
     MYSQL_USER | 用户名 | root |
     MYSQL_PASSWORD | 密码 | 无 |
 
-2. 邮件通知（非必选）  
-目前仅支持QQ邮箱，使用该功能需要准备两个邮箱，一个用于发送，一个用于接收，相关配置如下：
+2. 邮件通知（非必填）  
+邮件是自己给自己发送，通知内容主要包含：爬取总数、成功数、开始时间、结束时间，目前仅支持QQ邮箱，相关配置如下：  
+注意：邮件授权码非密码，如有疑惑请自行百度：QQ邮箱授权码
 
     配置名称 | 含义 |  默认值  
     -|-|-
-    RECEIVER | 接收者邮箱 | 无 |
-    SENDER | 发送者邮箱 | 无 |
-    SENDER_PASSWORD | 发送者邮箱授权码 | 无 |
+    MAIL_ACCOUNT | 邮箱账号 | 无 |
+    MAIL_PASSWORD | 邮箱授权码 | 无 |
 
 ## docker-compose 部署
 ```yml
@@ -35,9 +35,8 @@ services:
       MYSQL_PORT: 3306
       MYSQL_USER: root
       MYSQL_PASSWORD: 123456
-      RECEIVER: 987654321@qq.com
-      SENDER: 123456789@qq.com
-      SENDER_PASSWORD: 123456
+      MAIL_ACCOUNT: 987654321@qq.com
+      MAIL_PASSWORD: 123456
     volumes:
       - ./logs:/usr/log
       - ./htm:/usr/htm

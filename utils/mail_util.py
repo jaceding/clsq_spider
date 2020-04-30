@@ -17,7 +17,7 @@ def send_info(total_num, success_num, start_time, end_time):
     :param start_time: 开始时间
     :param end_time: 结束时间
     """
-    receiver = os.environ.get('RECEIVER')
+    receiver = os.environ.get('MAIL_ACCOUNT')
     content = '<h1>clsq_spider</h1>'
     content += '<br/>'
     content += '<h4>total:' + str(total_num) + '</h4>'
@@ -37,8 +37,8 @@ def send(receiver, content, subject) -> bool:
     success = True
     mailserver = 'smtp.qq.com'  # QQ邮箱服务器地址S
 
-    sender = os.environ.get('SENDER')  # 发件人邮箱用户名
-    password = os.environ.get('SENDER_PASSWORD')  # 发件人邮箱密码（授权码）
+    sender = os.environ.get('MAIL_ACCOUNT')  # 发件人邮箱用户名
+    password = os.environ.get('MAIL_PASSWORD')  # 发件人邮箱密码（授权码）
 
     mail = MIMEText(content, 'html', 'utf-8')
     mail['Subject'] = subject
