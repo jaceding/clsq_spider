@@ -4,7 +4,7 @@ FROM python:3.7.4
 MAINTAINER name 931977674@qq.com
 
 # 代码添加到code文件夹
-ADD ./clsq_spider /code
+ADD ./ /code
 
 # 设置code文件夹是工作目录
 WORKDIR /code
