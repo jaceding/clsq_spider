@@ -3,7 +3,7 @@
 # @Description: 邮件工具类
 # @Author : jaceding
 # @Time : 2019/12/8
-
+import os
 import smtplib
 from email.mime.text import MIMEText
 from utils.log_util import logger

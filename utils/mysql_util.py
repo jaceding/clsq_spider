@@ -4,7 +4,6 @@
 # @Author : jaceding
 # @Time : 2019/12/8
 import os
-
 import pymysql
 from pymysql import ProgrammingError
 
